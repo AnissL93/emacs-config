@@ -69,4 +69,9 @@
   :init
   (load-theme 'gruber-darker t))
 
+(use-package ace-jump-mode
+  :commands ace-jump-mode
+  :init
+  (bind-key "C-." 'ace-jump-mode))
+
 (provide 'init-package)
