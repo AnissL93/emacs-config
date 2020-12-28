@@ -5,6 +5,10 @@
 
 (package-initialize)
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (use-package evil
   :ensure t
   :init ;; tweak evil's configuration before loading it
@@ -38,14 +42,17 @@
   (helm-mode 1))
 
 (use-package projectile
+  :ensure t
   :config
   (projectile-mode))
 
 (use-package helm-projectile
+  :ensure t
   :config
   (helm-projectile-on))
 
 (use-package which-key
+  :ensure t
   :config
   (which-key-mode))
 
