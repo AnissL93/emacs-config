@@ -1,6 +1,9 @@
 (add-to-list 'load-path "~/.emacs.d/core")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (require 'init-package)
+(require 'config)
+(do-config)
+(init-packages)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
