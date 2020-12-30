@@ -1,6 +1,10 @@
 (defun load-all-packages ()
 
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (use-package evil
   :ensure t
   :init
@@ -49,7 +53,6 @@
     (defvar evil-operator-state-cursor)
     (defvar evil-normal-state-map)
     (defvar evil-insert-state-map)
-
     (setq evil-emacs-state-cursor '("red" box))
     (setq evil-normal-state-cursor '("green" box))
     (setq evil-visual-state-cursor '("orange" box))
